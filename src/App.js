@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import GlobalStyle from './globalStyles';
+import Navbar from './Components/Navbar/Navbar.js';
+import Section from './Components/Section/Section.js';
+import { Footer, ContactButton, ContactContainer, ContactInput, ContactTitle, SectionButton, SectionContainer, SectionNote, SectionParagraph, SectionTitle, Ilustration } from './App.styles.js';
 
-function App() {
-  return (
+const App = () => (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <GlobalStyle />
+      <Navbar />
+      <Section backgroundColor={"white"}>
+        <Ilustration />
+        <SectionContainer>
+          <SectionTitle color='#14141E'>Welcome Title</SectionTitle>
+          <SectionParagraph color='#383847'>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum, eros et molestie facilisis, nisi est accumsan magna, ut convallis.
+          </SectionParagraph>
+          <SectionNote color='#7E7E7E'>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </SectionNote>
+          <SectionButton>Learn More</SectionButton>
+        </SectionContainer>
+      </Section>
+      <Section backgroundColor={"#191923"}>
+        <SectionContainer>
+          <SectionTitle color='#FFFFFF'>Contact Us</SectionTitle>
+          <SectionParagraph color='#D8D8D8'>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum, eros et molestie facilisis, nisi est accumsan magna, ut convallis.
+          </SectionParagraph>
+          <SectionNote color='#7E7E7E'>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </SectionNote>
+        </SectionContainer>
+        <ContactContainer>
+          <ContactTitle>Contact Us</ContactTitle>
+          <ContactInput type='text' placeholder='Full Name' />
+          <ContactInput type='text' placeholder='Email' />
+          <ContactButton>Send me a Email!</ContactButton>
+        </ContactContainer>
+      </Section>
+      <Footer>
+        Desenvolvido por: github.com/andbmarques
+      </Footer>
     </div>
-  );
-}
+);
 
 export default App;
